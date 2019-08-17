@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang=jp>
+
+<head>
+	<title>table cell coloring Sample</title>
+	<style>
+		table,
+		td,
+		th {
+			border-collapse: collapse;
+			border: solid 1px;
+		}
+		
+		.text-top {
+			vertical-align: text-top;
+		}
+	</style>
+	<script>
+		window.onload = function() {
+			var colorList = ["#ff1a1a", "#ff6600", "#ff0066", "#ffcc00", "#66ff33", "#66ffcc", "#3333cc", "#999966", "#006666", "#6600cc"];
+			
+			var testData = {
+				"workCd": "作業区分",
+				"workStation": "ステーション01",
+				"workInfo": {
+					"workName00": "太郎01-太郎02-太郎03-太郎04-太郎05-太郎06-太郎07-太郎08-太郎09-太郎10-太郎11",
+					"workName01": "太郎01-太郎02-太郎03-太郎04-太郎05-太郎06-太郎07-太郎08-太郎09-太郎10",
+					"workName02": "太郎01-太郎02-太郎03-太郎04-太郎05-太郎06-太郎07-太郎08-太郎09",
+					"workName03": "太郎01-太郎02-太郎03-太郎04-太郎05-太郎06-太郎07-太郎08",
+					"workName04": "太郎01-太郎02-太郎03-太郎04-太郎05-太郎06-太郎07",
+					"workName05": "太郎01-太郎02-太郎03-太郎04-太郎05-太郎06",
+					"workName06": "太郎01-太郎02-太郎03-太郎04-太郎05",
+					"workName07": "太郎01-太郎02-太郎03-太郎04",
+					"workName08": "太郎01-太郎02-太郎03",
+					"workName09": "太郎01-太郎02",		
+					"workName10": "太郎01",	
+				}
+			}
+			
+			var stationRow = document.getElementById("station");
+			var htmlTextStation = "<td><span>" + testData["workCd"] + "<span></td>";
+			htmlTextStation += "<td><span>" + testData["workStation"] + "<span></td>";
+			
+			var workInfo = testData["workInfo"];
+			var workInfoKeys = Object.keys(workInfo);
+			
+			for (var index = 0; index < workInfoKeys.length; index++) {
+				var key = workInfoKeys[index];
+				var val = workInfo[key];
+				
+				var nameList = val.split('-');
+				var htmlTestTime = "<td class='text-top'>";
+				
+				var count = 0;
+				
+				for (var index01 = 0; index01 < nameList.length; index01++) {
+					if (10 == count) {
+						count = 0;
+					}
+					
+					htmlTestTime += "<div style='margin:5px;border: solid 1px;background-color:" + colorList[count] + "'>" + nameList[index01] + "</div>";
+					count++;
+				}
+				
+				htmlTestTime += "</td>";
+				htmlTextStation += htmlTestTime;
+			}
+			
+			stationRow.innerHTML = htmlTextStation;
+		}
+	</script>
+</head>
+
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th rowspan="2">作業区分</th>
+				<th rowspan="2">ステーション</th>
+				<th colspan="11">ステーション配置</th>
+			</tr>
+			<tr>
+				<th>08:00</th>
+				<th>08:15</th>
+				<th>08:30</th>
+				<th>08:45</th>
+				<th>09:00</th>
+				<th>09:15</th>
+				<th>09:30</th>
+				<th>09:45</th>
+				<th>10:00</th>
+				<th>10:15</th>
+				<th>10:30</th>		
+			</tr>	
+		</thead>
+		<tbody>
+			<tr id="station">
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+<footer>
+</footer>
+
+</html>
