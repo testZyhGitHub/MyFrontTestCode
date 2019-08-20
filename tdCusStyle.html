@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang=jp>
+
+<head>
+	<style>
+		.border-need {
+			border-collapse: collapse;
+			border: solid 1px;
+		}
+		
+		.cellone {
+			width: 50px;
+			height: 50px;
+			border: solid 1px;
+			margin: 5px;
+			padding: 5px;
+			border-radius: 50px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<table id="table01" style="border:solid 1px">
+		<tr>
+			<th class="border-need">08:00</th>
+			<th class="border-need">08:15</th>
+			<th class="border-need">08:30</th>
+			<th class="border-need">08:45</th>
+			<th class="border-need">09:00</th>
+		</tr>
+		<tr>
+			<td class="border-need">
+				<div class="cellone">
+					<span>太郎01</span>
+				</div>
+			</td>
+			<td class="border-need">
+				<div class="cellone">
+					<span>太郎02</span>
+				</div>
+			</td>
+			<td class="border-need">
+				<div class="cellone">
+					<span>太郎03</span>
+				</div>
+			</td>		
+			<td class="border-need">
+				<div class="cellone">
+					<span>太郎04</span>
+				</div>
+			</td>		
+			<td class="border-need">
+				<div class="cellone">
+				</div>
+			</td>	
+		</tr>
+		</table>
+	</div>
+	
+	<script>
+		$(document).ready(function() {
+			var tdList = $("#table01").find("td");
+			
+			for (var index = 0; index < tdList.length; index++) {
+				if (index <= 2) {
+					tdList[index].className = "border-need-on";
+				}
+			}
+		});
+	</script>
+</body>
+
+</html>
