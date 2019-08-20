@@ -1,0 +1,83 @@
+#data-grid-demo {
+    min-height: 700px;
+}
+
+#gridContainer {
+    padding-top: 45px;
+}
+
+#gridDeleteSelected {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    margin: 1px;
+    top: 0;
+}
+
+/*
+td[role="gridcell"] {
+	margin-bottom: 2px;
+	padding: 5px;
+	white-space: normal;
+	border: 1px solid #000;
+}
+
+td[role="gridcell"] > div {
+	border: 1px solid #000;
+}*/
+
+.cellone {
+	width: 50px;
+	height: 50px;
+	border: solid 1px;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 50px;
+}
+		
+.dx-button-text {
+    line-height: 0;
+}
+
+.cssCol1 {	
+	border: 1px solid #000;
+}
+
+.cssCol1 > div {	
+	border: 1px solid #000;
+}
+
+/* CSS vertical-align 属性  https://www.w3school.com.cn/cssref/pr_pos_vertical-align.asp */
+
+.cssCol2 {
+	margin-bottom: 2px;
+	padding: 5px;
+	white-space: normal;
+	border: 1px solid #000;	
+}
+
+.cssCol2 > div {
+	text-align: left;
+	vertical-align: top;
+	text-color: semi-condensed;
+	background-color: blue;	
+}
+
+.cssCol3 {	
+	text-align:  right;
+	vertical-align: text-bottom;
+}
+
+.cssCol3 > div {	
+	text-align:  right;
+	vertical-align: text-bottom;
+}
+
+.cssCol4 {	
+	text-align: right;
+	border: none!important;
+}
+
+.ColumnsAutomatic {	
+	border: 1px solid #000;
+}
